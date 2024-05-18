@@ -3,7 +3,10 @@ import React from 'react'
 import { WelcomeImg } from '../../theme/Images'
 import { styles } from './Style/InitialScreenStyle'
 
-export default function InitialScreen() {
+export default function InitialScreen({navigation}) {
+  const gotToLogin = () => {
+    navigation.navigate("Login")
+  } 
   return (
     <>
     <StatusBar backgroundColor="#20bf55"/>
@@ -16,7 +19,7 @@ export default function InitialScreen() {
                 <Text style={styles.textSub}>A workspace to over 10 Million inflencers around the world.</Text>
             </View>
             </View>
-            <TouchableOpacity style={styles.btn}>
+            <TouchableOpacity style={styles.btn} onPress={gotToLogin}>
               <Text style={styles.btnText}>Get Started</Text>
             </TouchableOpacity>
         </View>
